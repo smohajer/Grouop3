@@ -17,7 +17,7 @@ public class Log {
       // TODO: Create GUI to create the log string
       createLog(logName);
     }
-    // TODO: return logString to Account Contructor
+    // TODO: return logString to Account Constructor
   }
 
   private boolean logExist(String logName) {
