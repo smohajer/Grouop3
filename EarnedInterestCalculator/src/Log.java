@@ -2,26 +2,26 @@ import java.io.*;
 
 public class Log {
   private String logName;
-
+  
+  public String getLogName() {
+    return logName;
+  }
+  
+  public void setLogName(String logName) {
+    this.logName = logName;
+  }
+  
   public Log(String logName) {
     setLogName(logName);
-    if (!logExist(getLogName())) {
+    if (!logExist(logName)) {
       // TODO: Create GUI to create the log string
-      // TODO: Create Log with above string
+      createLog(logName);
     }
   }
 
   private boolean logExist(String logName) {
     File logFile=new File(logName);
     return logFile.exists();
-  }
-
-  public String getLogName() {
-    return logName;
-  }
-
-  public void setLogName(String logName) {
-    this.logName = logName;
   }
 
   public String getLogFile() {
@@ -35,5 +35,14 @@ public class Log {
       // TODO: what f will do
     }
     return logString;
+  }
+  
+  public void createLog(String logName){
+    File logFile = new File(logName);
+    try{
+      logFile.createNewFile();
+    } catch (IOException e){
+      //TODO: what this exception will do
+    }
   }
 }
