@@ -9,9 +9,9 @@ public class Account {
   private LocalDateTime lastDate;
   private BigDecimal interestEarned;
 
-  public Account(String accounteName) {
-    setAccountName(accounteName);
-    Log log = new Log(getAccountName);
+  public Account(String accountName) {
+    setAccountName(accountName);
+    Log log = new Log(getAccountName());
     String logInfo = log.getLogFile();
     logParser(logInfo);
     LocalDateTime date = getLastDate();
@@ -19,7 +19,7 @@ public class Account {
     BigDecimal interest = getInterest();
     calculateInterestearned(balance, date, interest);
   }
-
+  
   public BigDecimal getBalance() {
     return balance;
   }
