@@ -46,4 +46,6 @@ public class Log {
       // TODO: what this exception will do
     }
   }
+  
+  // TODO: setLog method;
 }
