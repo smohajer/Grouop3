@@ -1,7 +1,4 @@
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class Log {
   private String logName;
@@ -12,6 +9,11 @@ public class Log {
       // TODO: Create GUI to create the log string
       // TODO: Create Log with above string
     }
+  }
+
+  private boolean logExist(String logName) {
+    File logFile=new File(logName);
+    return logFile.exists();
   }
 
   public String getLogName() {
